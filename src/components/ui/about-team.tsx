@@ -218,7 +218,7 @@ const cards = [
           television studios in the world, to build a streaming television
           business, focusing on operating all aspects of the business including
           financial planning and analysis, marketing strategy, data synthesis,
-          and cross-functional team leadership. At the core of Joseph's
+          and cross-functional team leadership. At the core of Joseph&apos;s
           leadership philosophy is understanding human psychology and
           motivation. <br />
           Joseph’s vision for his company is not just about creating a valuable
