@@ -21,9 +21,9 @@ const PreorderHero = () => {
         </h1>
         <h3 className="text-muted-foreground">
           <Balancer>
-            Be among the first to own our cutting-edge 65" television and gain
-            opportunity to be an early investor. Elevate your home entertainment
-            and invest in Efficient LLC’s vision for the future.
+            Be among the first to own our cutting-edge 65 inch television and
+            gain opportunity to be an early investor. Elevate your home
+            entertainment and invest in Efficient LLC’s vision for the future.
           </Balancer>
         </h3>
         <div className="not-prose mt-6 flex gap-2 md:mt-12">

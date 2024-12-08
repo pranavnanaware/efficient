@@ -57,7 +57,7 @@ export function ShowcaseCard() {
             What you will get.
           </h2>
           <ul className="mt-2 text-neutral-200 text-sm list-disc list-inside">
-            <li>A 65" 8K Internet-Enabled Smart Television.</li>
+            <li>A 65 inch 8K Internet-Enabled Smart Television.</li>
             <li>
               Bundled Subscription for $139.99/month (requires one registration
               for access to all included content and services).

@@ -97,7 +97,7 @@ export default function EfficientTVShowcase() {
 
         <section className="bg-transparent rounded-lg shadow-xl p-8 mb-16">
           <h2 className="text-3xl font-bold mb-6 text-center text-white">
-            What's Included
+            What&apos;s Included
           </h2>
           <ul className="space-y-4">
             {[

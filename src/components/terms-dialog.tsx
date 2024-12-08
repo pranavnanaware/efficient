@@ -30,7 +30,7 @@ export function TermsDialog({ open, onOpenChange }: TermsDialogProps) {
             <p>You are purchasing the following product:</p>
             <ul className="list-disc list-inside">
               <li>
-                <strong>Product:</strong> 65" 8K Internet-Enabled Smart
+                <strong>Product:</strong> 65 inch 8K Internet-Enabled Smart
                 Television
               </li>
               <li>
