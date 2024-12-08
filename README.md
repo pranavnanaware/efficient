@@ -1,5 +1,5 @@
 <h1 align="start">
-  Efficient - AI Powered Website Builder
+  Efficient - The 21st entertainment century everything bundle.
 </h1>
 
 <img width="1280" alt="Efficient Thumbnail" src="https://github.com/user-attachments/assets/8d11fc9c-8220-4d36-a0e3-271b73a7f23d">
@@ -71,6 +71,9 @@ Download all the assets required for this project [here](https://drive.google.co
 
 If you enjoy using caps.ai, consider supporting my work!  
 [Buy Me a Coffee ☕](https://buymeacoffee.com/shreyas29)
+
 # efficient
+
 # efficient
+
 # efficient
