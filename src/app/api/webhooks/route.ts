@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 const ddbClient = new DynamoDBClient({
   region: process.env.AWS_REGION,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID as string,
+    accessKeyId: process.env.AWS_ACCESS_KEY as string,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY as string,
   },
 });
