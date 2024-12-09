@@ -127,8 +127,8 @@ export function PurchaseForm() {
       </div>
       <div>
         <Label htmlFor="terms" className="text-xs">
-          Note: A charge of $3000 will be put on hold upon submission. You won't
-          be charged until the product is shipped.
+          Note: A charge of $3000 will be put on hold upon submission. You
+          won&apos;t be charged until the product is shipped.
         </Label>
       </div>
 
