@@ -14,7 +14,11 @@ export function PurchaseForm() {
     firstName: "",
     lastName: "",
     email: "",
-    address: "",
+    addressLine1: "",
+    addressLine2: "",
+    city: "",
+    state: "",
+    zipcode: "",
     phoneNumber: "",
     agreedToTerms: false,
   });
@@ -27,11 +31,38 @@ export function PurchaseForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateForm = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+\d{1,3}\d{9,11}$/;
+    const zipRegex = /^\d+$/;
+
+    if (!emailRegex.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+
+    if (!phoneRegex.test(formData.phoneNumber)) {
+      alert("Please enter a valid phone number with country code.");
+      return false;
+    }
+
+    if (!zipRegex.test(formData.zipcode)) {
+      alert("Please enter a valid zipcode.");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.agreedToTerms) {
       alert("You must agree to the terms.");
+      return;
+    }
+
+    if (!validateForm()) {
       return;
     }
 
@@ -46,7 +77,16 @@ export function PurchaseForm() {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
-          address: formData.address,
+          address:
+            formData.addressLine1 +
+            " " +
+            formData.addressLine2 +
+            " " +
+            formData.city +
+            " " +
+            formData.state +
+            " " +
+            formData.zipcode,
           phoneNumber: formData.phoneNumber,
         }),
       });
@@ -104,11 +144,50 @@ export function PurchaseForm() {
           />
         </div>
         <div>
-          <Label htmlFor="address">Address</Label>
-          <Textarea
-            id="address"
-            name="address"
-            value={formData.address}
+          <Label htmlFor="addressLine1">Address Line 1</Label>
+          <Input
+            id="addressLine1"
+            name="addressLine1"
+            value={formData.addressLine1}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="addressLine2">Address Line 2</Label>
+          <Input
+            id="addressLine2"
+            name="addressLine2"
+            value={formData.addressLine2}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <Label htmlFor="city">City</Label>
+          <Input
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="state">State</Label>
+          <Input
+            id="state"
+            name="state"
+            value={formData.state}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <Label htmlFor="zipcode">Zipcode</Label>
+          <Input
+            id="zipcode"
+            name="zipcode"
+            value={formData.zipcode}
             onChange={handleInputChange}
             required
           />
@@ -149,6 +228,7 @@ export function PurchaseForm() {
           I have read and agree to the{" "}
           <Button
             variant="link"
+            type="button"
             className="p-0 h-auto text-sm"
             onClick={() => setIsDialogOpen(true)}
           >
