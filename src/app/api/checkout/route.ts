@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
         },
       ],
       customer_email: email,
-      success_url: `${process.env.NEXT_PUBLIC_URL}`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}/success`,
       cancel_url: `${process.env.NEXT_PUBLIC_URL}`,
 
       metadata: {
