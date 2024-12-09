@@ -8,7 +8,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 export async function POST(req: NextRequest) {
   try {
     // Extract form data from request if needed
-    console.log(process.env.NEXT_PUBLIC_DOMAIN);
     const { email, firstName, lastName, address, phoneNumber } =
       await req.json();
 

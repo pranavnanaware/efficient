@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb";
-
+import { randomUUID } from "crypto";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2024-11-20.acacia",
 });
@@ -55,10 +55,11 @@ export async function POST(req: NextRequest) {
         };
 
       console.log("Checkout session completed:", session);
-
+      const id = await randomUUID();
       // Insert order data into DynamoDB
       const orderData = {
         orderId: paymentIntentId,
+        id: id,
         firstName,
         lastName,
         email,
