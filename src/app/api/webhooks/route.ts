@@ -14,6 +14,7 @@ const ddbClient = new DynamoDBClient({
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY as string,
   },
 });
+
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
 
 export async function POST(req: NextRequest) {

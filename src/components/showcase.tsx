@@ -155,7 +155,7 @@ export default function EfficientTVShowcase() {
             <div className="flex justify-center items-center space-x-4">
               <div className="text-4xl font-bold">
                 $
-                <NumberTicker value={2999} className="text-white" delay={0.1} />
+                <NumberTicker value={3000} className="text-white" delay={0.1} />
               </div>
             </div>
             <p className="text-center mt-4 text-xs">

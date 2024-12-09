@@ -24,8 +24,9 @@ export async function POST(req: NextRequest) {
         },
       ],
       customer_email: email,
-      success_url: `http://localhost:3000/`,
-      cancel_url: `http://localhost:3000/`,
+      success_url: `${process.env.NEXT_PUBLIC_DOMAIN}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_DOMAIN}`,
+
       metadata: {
         email,
         firstName,
