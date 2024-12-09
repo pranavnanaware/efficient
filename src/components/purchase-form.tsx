@@ -18,6 +18,7 @@ export function PurchaseForm() {
     phoneNumber: "",
     agreedToTerms: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,10 +27,44 @@ export function PurchaseForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your server
-    console.log("Form submitted:", formData);
+
+    if (!formData.agreedToTerms) {
+      alert("You must agree to the terms.");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          address: formData.address,
+          phoneNumber: formData.phoneNumber,
+        }),
+      });
+
+      const result = await response.json();
+      if (response.ok && result.url) {
+        // Redirect the user to the Stripe Checkout page
+        window.location.href = result.url;
+      } else {
+        console.error("Error creating checkout session:", result.error);
+        alert("There was an error. Please try again.");
+      }
+    } catch (error: any) {
+      console.error("Exception during order creation:", error.message);
+      alert("There was an error. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -91,10 +126,9 @@ export function PurchaseForm() {
         </div>
       </div>
       <div>
-        {" "}
-        <Label htmlFor="terms" className="text-xs ">
-          Note a charge of $3000 will be put on hold upon submission. You
-          won&apos;t be charged until the product is shipped.
+        <Label htmlFor="terms" className="text-xs">
+          Note: A charge of $3000 will be put on hold upon submission. You won't
+          be charged until the product is shipped.
         </Label>
       </div>
 
@@ -106,12 +140,11 @@ export function PurchaseForm() {
           onCheckedChange={(checked) =>
             setFormData((prev) => ({
               ...prev,
-              agreedToTerms: checked as boolean,
+              agreedToTerms: !!checked,
             }))
           }
           required
         />
-
         <Label htmlFor="terms" className="text-sm">
           I have read and agree to the{" "}
           <Button
@@ -123,8 +156,8 @@ export function PurchaseForm() {
           </Button>
         </Label>
       </div>
-      <Button type="submit" className="w-full">
-        Submit
+      <Button type="submit" className="w-full" disabled={isLoading}>
+        {isLoading ? "Processing..." : "Submit"}
       </Button>
       <TermsDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </form>

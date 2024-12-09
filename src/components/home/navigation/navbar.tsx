@@ -1,9 +1,14 @@
-import { Container, Icons } from "@/components";
-import { buttonVariants } from "@/components/ui/button";
-import Image from "next/image";
-
+"use client";
+import Container from "@/components/global/container";
+import { Menu } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import Image from "next/image";
+import { buttonVariants } from "@/components/ui/button";
+
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="px-4 h-14 sticky top-0 inset-x-0 w-full bg-background/40 backdrop-blur-lg border-b border-border z-50">
       <Container reverse>
@@ -31,10 +36,36 @@ const Navbar = () => {
                 className: "hidden md:flex",
               })}
             >
-              PreOrder
+              Preorder
             </Link>
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <Menu />
+            </button>
           </div>
         </div>
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-14 left-0 w-full bg-background border-t border-border">
+            <ul className="flex flex-col items-center gap-4 py-4">
+              <Link href="/about" className="hover:text-foreground/80 text-sm">
+                About
+              </Link>
+              <Link href="#" className="hover:text-foreground/80 text-sm">
+                Contact
+              </Link>
+              <Link
+                href="/preorder"
+                className={buttonVariants({
+                  size: "sm",
+                })}
+              >
+                Preorder
+              </Link>
+            </ul>
+          </div>
+        )}
       </Container>
     </header>
   );
