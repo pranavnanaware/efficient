@@ -26,6 +26,13 @@ export async function POST(req: NextRequest) {
       customer_email: email,
       success_url: `http://localhost:3000/`,
       cancel_url: `http://localhost:3000/`,
+      metadata: {
+        email,
+        firstName,
+        lastName,
+        address,
+        phoneNumber,
+      },
       payment_intent_data: {
         capture_method: "manual",
         metadata: {
