@@ -4,20 +4,20 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="flex flex-col relative items-center justify-center border-t border-border pt-8 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-16">
-      <div className="flex justify-between w-full">
-        <div className="flex flex-col items-start justify-start md:max-w-[200px]">
+      <div className="flex flex-col md:flex-row md:justify-between w-full items-center md:items-start">
+        <div className="flex flex-col items-center md:items-start justify-start md:max-w-[200px]">
           <span className="text-neutral-200 text-sm flex items-center">
             Built in USA.
             <Heart className="w-3.5 h-3.5 ml-1 fill-primary text-primary" />
           </span>
-          <span className="text-neutral-200 text-sm mt-2">
+          <span className="text-neutral-200 text-sm mt-2 text-center md:text-left">
             Efficient LLC.
             <br />
             Los Angeles, CA
           </span>
         </div>
 
-        <div className="mt-10 md:mt-0 flex flex-col justify-between w-full max-w-[200px]">
+        <div className="mt-10 md:mt-0 flex flex-col text-center md:text-start justify-between w-full max-w-[200px] items-center md:items-start">
           <h3 className="text-base font-medium text-white">Company</h3>
           <ul className="mt-4 text-sm text-muted-foreground">
             <li className="">

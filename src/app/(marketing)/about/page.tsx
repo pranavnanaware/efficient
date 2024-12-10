@@ -7,7 +7,7 @@ const About = () => {
   return (
     <Wrapper className="flex flex-col items-center justify-center py-12 relative">
       <Container>
-        <div className="max-w-md mx-auto text-start md:text-center">
+        <div className="max-w-md mx-auto text-center">
           <h2 className="text-2xl lg:text-3xl font-semibold mt-6">
             About The Team
           </h2>
@@ -20,13 +20,13 @@ const About = () => {
       </Container>
 
       <Container>
-        <div className="max-w-md mx-auto text-start md:text-center">
+        <div className="max-w-md mx-auto text-center">
           <h2 className="text-2xl lg:text-3xl font-semibold mt-12">
             Our Mission
           </h2>
         </div>
         <Container>
-          <div className="flex items-center justify-center mx-auto mt-8">
+          <div className="flex text-center items-center justify-center mx-auto mt-8">
             <p className="text-xl lg:text-2xl font-semibold">
               To build the ‘everything bundle’ for the entertainment industry
             </p>

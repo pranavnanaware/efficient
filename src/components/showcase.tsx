@@ -106,8 +106,8 @@ export default function EfficientTVShowcase() {
               "One monthly subscription of $139.99",
               "One access point",
             ].map((item, index) => (
-              <li key={index} className="flex items-center text-white">
-                <Check className="w-6 h-6 text-white mr-2" />
+              <li key={index} className="flex items-start text-white">
+                <Check className="w-6 h-6 text-white mr-2 flex-shrink-0" />
                 <span dangerouslySetInnerHTML={{ __html: item }} />
               </li>
             ))}

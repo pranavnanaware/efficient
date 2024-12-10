@@ -8,7 +8,6 @@ const PreOrder = () => {
     <>
       <Wrapper>
         <PreorderHero />
-
         <Showcase />
       </Wrapper>
     </>
