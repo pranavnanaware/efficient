@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       // Set a line_item with a price of 3000 USD (300000 cents)
       line_items: [
         {
-          price: "price_1QTqi0P1meXnWQqsG5hDQ8XB",
+          price: process.env.STRIPE_PRICE_ID as string,
           quantity: 1,
         },
       ],
