@@ -1,4 +1,5 @@
 import { Container, Icons, Wrapper } from "@/components";
+import { HeroScrollDemo } from "@/components/tv-scroll";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 
@@ -38,11 +39,11 @@ const HomePage = () => {
             </button>
 
             <div className="flex flex-col items-center mt-8 max-w-3xl w-11/12 md:w-full">
-              <h1 className="text-2xl md:text-4xl lg:textxl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent">
+              <h1 className="text-2xl md:text-5xl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent">
                 Introducing the 21st century{" "}
                 <SparklesText
                   text={"Everything"}
-                  className="text-white text-2xl md:text-4xl lg:textxl"
+                  className="text-white text-2xl md:text-5xl lg:textxl"
                 />{" "}
                 entertainment bundle
               </h1>
@@ -53,14 +54,10 @@ const HomePage = () => {
                 Eliminating the need to switch between apps.
               </p>
             </div>
-
-            <div className="relative flex items-center py-10 md:py-20 w-full">
-              <div className="absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
-            </div>
           </div>
+          <HeroScrollDemo />
         </Container>
       </Wrapper>
-
       {/* how it works */}
       {/* <Wrapper className="flex flex-col items-center justify-center py-12 relative">
         <Container>

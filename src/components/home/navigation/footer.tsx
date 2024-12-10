@@ -6,9 +6,14 @@ const Footer = () => {
     <footer className="flex flex-col relative items-center justify-center border-t border-border pt-8 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-16">
       <div className="flex justify-between w-full">
         <div className="flex flex-col items-start justify-start md:max-w-[200px]">
-          <span className=" text-neutral-200 text-sm flex items-center">
-            Built proudly in USA
+          <span className="text-neutral-200 text-sm flex items-center">
+            Built in USA.
             <Heart className="w-3.5 h-3.5 ml-1 fill-primary text-primary" />
+          </span>
+          <span className="text-neutral-200 text-sm mt-2">
+            Efficient LLC.
+            <br />
+            Los Angeles, CA
           </span>
         </div>
 

@@ -69,13 +69,6 @@ export function ShowcaseCard() {
             </li>
           </ul>
         </div>
-        <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
-          alt="linear demo image"
-          className="absolute -right-10 -bottom-10 object-contain rounded-2xl"
-        />
       </WobbleCard>
     </div>
   );

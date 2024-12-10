@@ -68,7 +68,7 @@ export function AboutCard() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-full md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -77,7 +77,7 @@ export function AboutCard() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-contain object-top"
+                  className="w-full h-52 lg:h-52 sm:rounded-tr-lg sm:rounded-tl-lg object-contain object-top"
                 />
               </motion.div>
 
@@ -89,6 +89,12 @@ export function AboutCard() {
                       className="font-bold text-white"
                     >
                       {active.title}
+                    </motion.h3>
+                    <motion.h3
+                      layoutId={`description-${active.mail}-${id}`}
+                      className="font-bold text-white"
+                    >
+                      {active.mail}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
@@ -107,7 +113,7 @@ export function AboutCard() {
                     {active.ctaText}
                   </motion.a>
                 </div>
-                <div className="pt-4 relative px-4 max-h-40 overflow-y-auto">
+                <div className="pt-4 relative px-4 max-h-96 overflow-y-auto">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
@@ -150,12 +156,19 @@ export function AboutCard() {
                 >
                   {card.title}
                 </motion.h3>
+
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-white text-center md:text-left"
+                  className="text-white text-center md:text-left text-sm"
                 >
                   {card.description}
                 </motion.p>
+                <motion.h3
+                  layoutId={`title-${card.mail}-${id}`}
+                  className="font-medium text-white text-center md:text-left text-sm"
+                >
+                  {card.mail}
+                </motion.h3>
               </div>
             </div>
             <motion.button
@@ -209,6 +222,7 @@ const cards = [
     description: "CEO/Founder",
     title: "Joseph Proffitt",
     src: "/joseph.png",
+    mail: "jp@efficient-tv.com",
     ctaText: "Know More",
     ctaLink: "https://www.linkedin.com/in/joseph-g-proffitt/",
     content: () => {
@@ -239,6 +253,7 @@ const cards = [
   {
     description: "CTO/Co-Founder",
     title: "Pranav Nanaware",
+    mail: "pn@efficient-tv.com",
     src: "/pranav.JPG",
     ctaText: "Know More",
     ctaLink: "https://pranav.wiki/",
