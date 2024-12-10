@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { countrycodes } from "@/constants";
+import { CountryCodeCombobox } from "./ui/country-combobox";
 
 export function PurchaseForm() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -203,18 +204,7 @@ export function PurchaseForm() {
         <div>
           <Label htmlFor="phoneNumber">Phone Number</Label>
           <div className="flex">
-            <Select value={countryCode} onValueChange={setCountryCode}>
-              <SelectTrigger className="w-[100px]">
-                <SelectValue placeholder="Code" />
-              </SelectTrigger>
-              <SelectContent>
-                {countrycodes.map((code: Record<any, any>) => (
-                  <SelectItem key={code["dial_code"]} value={code["dial_code"]}>
-                    {code["dial_code"] + " " + code["code"]}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <CountryCodeCombobox />
             <Input
               id="phoneNumber"
               name="phoneNumber"
