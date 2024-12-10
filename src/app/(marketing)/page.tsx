@@ -7,15 +7,11 @@ import { Input } from "@/components/ui/input";
 import { LampContainer } from "@/components/ui/lamp";
 import { SparklesText } from "@/components/ui/magic-text";
 import SectionBadge from "@/components/ui/section-badge";
-import { reviews } from "@/constants";
 
 import Image from "next/image";
 import Link from "next/link";
 
 const HomePage = () => {
-  const firstRow = reviews.slice(0, reviews.length / 2);
-  const secondRow = reviews.slice(reviews.length / 2);
-
   return (
     <section className="w-full relative flex items-center justify-center flex-col px-4 md:px-0 py-8">
       {/* hero */}

@@ -6,7 +6,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TermsDialog } from "./terms-dialog";
-import { Textarea } from "./ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { countrycodes } from "@/constants";
 
 export function PurchaseForm() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -22,6 +29,7 @@ export function PurchaseForm() {
     phoneNumber: "",
     agreedToTerms: false,
   });
+  const [countryCode, setCountryCode] = useState("+1");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (
@@ -33,7 +41,7 @@ export function PurchaseForm() {
 
   const validateForm = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\+\d{1,3}\d{9,11}$/;
+    const phoneRegex = /^\d{10}$/;
     const zipRegex = /^\d+$/;
 
     if (!emailRegex.test(formData.email)) {
@@ -42,7 +50,7 @@ export function PurchaseForm() {
     }
 
     if (!phoneRegex.test(formData.phoneNumber)) {
-      alert("Please enter a valid phone number with country code.");
+      alert("Please enter a valid 10-digit phone number.");
       return false;
     }
 
@@ -87,7 +95,7 @@ export function PurchaseForm() {
             formData.state +
             " " +
             formData.zipcode,
-          phoneNumber: formData.phoneNumber,
+          phoneNumber: countryCode + formData.phoneNumber,
         }),
       });
 
@@ -194,14 +202,33 @@ export function PurchaseForm() {
         </div>
         <div>
           <Label htmlFor="phoneNumber">Phone Number</Label>
-          <Input
-            id="phoneNumber"
-            name="phoneNumber"
-            type="tel"
-            value={formData.phoneNumber}
-            onChange={handleInputChange}
-            required
-          />
+          <div className="flex">
+            <Select value={countryCode} onValueChange={setCountryCode}>
+              <SelectTrigger className="w-[100px]">
+                <SelectValue placeholder="Code" />
+              </SelectTrigger>
+              <SelectContent>
+                {countrycodes.map((code: Record<any, any>) => (
+                  <SelectItem key={code["dial_code"]} value={code["dial_code"]}>
+                    {code["dial_code"] + " " + code["code"]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Input
+              id="phoneNumber"
+              name="phoneNumber"
+              type="tel"
+              value={formData.phoneNumber}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+                setFormData((prev) => ({ ...prev, phoneNumber: value }));
+              }}
+              required
+              className="flex-1 ml-2"
+              maxLength={10}
+            />
+          </div>
         </div>
       </div>
       <div>
