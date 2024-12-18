@@ -13,24 +13,24 @@ import { useId } from "react";
 
 const grid = [
   {
-    title: "4K Ultra HD",
+    title: "8K Ultra HD",
     description:
-      "Immerse yourself in stunning 4K resolution for crystal-clear visuals.",
+      "Immerse yourself in stunning 8K resolution for crystal-clear visuals.",
   },
   {
-    title: "AI-Powered Education",
+    title: "AI Assistant",
     description:
-      "Learn through entertainment with live Q&A powered by extensive movie and show libraries combined with advanced video and language models.",
+      "Utilize our cutting-edge AI assistant to explore life's questions through film, television, news, and sports. Leveraging advanced video processing and natural language understanding models, we deliver personalized and insightful content recommendations.",
   },
   {
     title: "Household Communication",
     description:
-      "Engage in seamless two-way communication with your friends, sharing, exploring and watching favorite content effortlessly.",
+      "Engage in seamless two-way communication with friends and family through our smart television. Use video messages to let your loved ones know you're thinking of them. Share your watchlist, no more texting to ask what to watch next.",
   },
   {
     title: "Web3 Integration",
     description:
-      "Experience decentralized content streaming with Web3.0, ensuring secure and transparent content ownership and low latency streaming.",
+      "Enjoy a new way of streaming content that is secure and transparent, giving you more control over what you watch.",
   },
   {
     title: "Interactive Viewing",

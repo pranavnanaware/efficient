@@ -1,5 +1,34 @@
 import { Icons } from "@/components";
 
+export const homePageData = {
+  hero: {
+    buttonText: "Coming Soon",
+    heading: "The Smart Television Entertainment Bundle",
+    everythingText: "Everything",
+    description:
+      "One subscription. One registration. All services. Eliminating switching between apps. It’s the 21st century replacement of a set-top-box, except bundled inside of a smart television.",
+  },
+  featuresSection: {
+    badgeTitle: "Evolving",
+    heading:
+      "New ways television and entertainment bring households, community and culture together",
+  },
+  smartTvSection: {
+    heading: "Smart TV, Smarter Streaming",
+    description:
+      "One subscription, One Device, Infinite entertainment possibilities.",
+  },
+  waitlist: {
+    heading: "Join the waitlist",
+    description:
+      "Join our waitlist now and recieve the latest product updates.",
+    inputPlaceholder: "Enter your email",
+    submitButtonText: "Submit",
+    privacyPolicyText: "By subscribing you agree with our",
+    privacyPolicyLinkText: "Privacy Policy",
+  },
+};
+
 export const countrycodes = [
   {
     name: "Afghanistan",

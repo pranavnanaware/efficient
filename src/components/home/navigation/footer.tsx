@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row md:justify-between w-full items-center md:items-start">
         <div className="flex flex-col items-center md:items-start justify-start md:max-w-[200px]">
           <span className="text-neutral-200 text-sm flex items-center">
-            Built in USA.
+            Built in the USA.
             <Heart className="w-3.5 h-3.5 ml-1 fill-primary text-primary" />
           </span>
           <span className="text-neutral-200 text-sm mt-2 text-center md:text-left">
